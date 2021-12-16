@@ -20,8 +20,9 @@ button {
     margin-left: 30px;
     width: 85px;
     padding: 10px;
-    border-radius: 10px;;
+    border-radius: 10px;
     cursor: pointer;
+    color: black;
 }
 
 button:hover {
