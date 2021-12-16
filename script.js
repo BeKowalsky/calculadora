@@ -28,6 +28,7 @@ let multiplicacao =  document.getElementById('multiplicacao');
 let Pontovirgula = document.getElementById('virgula');
 
 let temUmPonto = false;
+let temValorNaTela = false;
 
 let calculatorIsOn = false;
 let mostrouValorGravado = 0;
@@ -59,6 +60,7 @@ function calculadoraOn(){
     tela.style.fontSize = tamanho+"px";
     numerosTotais = 0;
     temUmPonto = false;
+    temValorNaTela = false;
 
     botao1.removeAttribute("disabled");
     botao2.removeAttribute("disabled");
@@ -90,6 +92,7 @@ function limparTela(){
         tela.style.fontSize = tamanho+"px";
         numerosTotais = 0;
         temUmPonto = false;
+        temValorNaTela = false;
 
         botao1.removeAttribute("disabled");
         botao2.removeAttribute("disabled");
@@ -125,6 +128,8 @@ function gravaValor(){
             tela.value = "";
             zeroInicial.style.display = "block";
             numerosTotais = 0;
+            temUmPonto = false;
+            temValorNaTela = false;
         }
 
         botao1.removeAttribute("disabled");
@@ -157,6 +162,7 @@ function subtraiValorGravado(){
         tela.value = "";
         zeroInicial.style.display = "block";
         numerosTotais = 0;
+        temValorNaTela = false;
 
         botao1.removeAttribute("disabled");
         botao2.removeAttribute("disabled");
@@ -188,6 +194,7 @@ function mostraValorOuApaga(){
         localStorage.setItem("MostrouQuantasVezes", mostrouValorGravado);
         zeroInicial.style.display = "none";
         numerosTotais = tela.value.length;
+        temValorNaTela = false;
 
         if(largura < 720 && tela.value.length <= 6){
             tamanho = 50;
@@ -211,10 +218,12 @@ function mostraValorOuApaga(){
         gravado = false;
         tela.value = "";
         zeroInicial.style.display = "block";
+        temValorNaTela = false;
     } else {
         tela.value = "";
         zeroInicial.style.display = "block";
         numerosTotais = 0;
+        temValorNaTela = false;
     }
 }
 
@@ -224,6 +233,8 @@ function botao(valoTela){
         tela.value += valoTela;
         zeroInicial.style.display = "none";
         numerosTotais++;
+        temValorNaTela = false;
+        
         var largura = window.innerWidth;
         
         if(numerosTotais == 12 || numerosTotais == 23){
@@ -264,12 +275,50 @@ function botao(valoTela){
 //Adiciona a vírgula caso o usuário queira calculo com virgula
 function virgula(){
     if(calculatorIsOn == true){
-        if(temUmPonto == false) {
+        if(temUmPonto == false && temValorNaTela == true) {
             tela.value += ".";
             temUmPonto = true;
+            zeroInicial.style.display = "none";
+            var largura = window.innerWidth;
+
+            if(largura < 720 && quantidadeNaTela <= 6){
+                tamanho = 50;
+                tela.style.fontSize = tamanho+"px";
+            } else if(largura < 720 && quantidadeNaTela <= 12){
+                tamanho = 30;
+                tela.style.fontSize = tamanho+"px";
+            } else if(largura > 720 && quantidadeNaTela <= 6){
+                tamanho = 92;
+                tela.style.fontSize = tamanho+"px";
+            } else if(largura > 720 && quantidadeNaTela <= 12){
+                tamanho = 50;
+                tela.style.fontSize = tamanho+"px";
+            }
+
+        } else if(temUmPonto == false && temValorNaTela == false){
+            tela.value += "0.";
+            temUmPonto = true;
+            zeroInicial.style.display = "none";
+            var largura = window.innerWidth;
+
+            if(largura < 720 && quantidadeNaTela <= 6){
+                tamanho = 50;
+                tela.style.fontSize = tamanho+"px";
+            } else if(largura < 720 && quantidadeNaTela <= 12){
+                tamanho = 30;
+                tela.style.fontSize = tamanho+"px";
+            } else if(largura > 720 && quantidadeNaTela <= 6){
+                tamanho = 92;
+                tela.style.fontSize = tamanho+"px";
+            } else if(largura > 720 && quantidadeNaTela <= 12){
+                tamanho = 50;
+                tela.style.fontSize = tamanho+"px";
+            }
+
         }
     }
 }
+
 
 //Pega o que o usuário vai clicando de operação e add na tela
 var valor;
@@ -301,6 +350,7 @@ function operacao(operation){
         }
         
         temUmPonto = false;
+        temValorNaTela = true;
     }
 }
 
@@ -313,6 +363,7 @@ function calcular(){
         tela.value = resultado;
         quantidadeNaTela = 0;
         temUmPonto = false;
+        temValorNaTela = true;
 
         botao1.removeAttribute("disabled");
         botao2.removeAttribute("disabled");
