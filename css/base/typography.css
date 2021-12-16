@@ -45,4 +45,8 @@ footer {
     .botoesInicio > button {
         font-size: 15px;
     }
+    
+    #zeroInicial {
+        font-size: 50px;
+    }
 }
