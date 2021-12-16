@@ -194,7 +194,7 @@ function mostraValorOuApaga(){
         localStorage.setItem("MostrouQuantasVezes", mostrouValorGravado);
         zeroInicial.style.display = "none";
         numerosTotais = tela.value.length;
-        temValorNaTela = false;
+        temValorNaTela = true;
 
         if(largura < 720 && tela.value.length <= 6){
             tamanho = 50;
@@ -233,7 +233,7 @@ function botao(valoTela){
         tela.value += valoTela;
         zeroInicial.style.display = "none";
         numerosTotais++;
-        temValorNaTela = false;
+        temValorNaTela = true;
         
         var largura = window.innerWidth;
         
