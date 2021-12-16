@@ -32,7 +32,7 @@ footer {
     text-align: center;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 720px) {
 
     #tela {
         font-size: 50px;
