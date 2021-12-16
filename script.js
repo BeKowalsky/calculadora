@@ -183,13 +183,13 @@ function mostraValorOuApaga(){
         zeroInicial.style.display = "none";
         numerosTotais = tela.value.length;
 
-        if(largura < 420 && tela.value.length <= 6){
+        if(largura < 720 && tela.value.length <= 6){
             tamanho = 50;
             tela.style.fontSize = tamanho+"px";
-        } else if(largura < 420 && tela.value.length <= 12){
+        } else if(largura < 720 && tela.value.length <= 12){
             tamanho = 30;
             tela.style.fontSize = tamanho+"px";
-        } else if(largura > 420 && tela.value.length <= 6){
+        } else if(largura > 720 && tela.value.length <= 6){
             tamanho = 92;
             tela.style.fontSize = tamanho+"px";
         } else if(quantidadeNaTela > 6 && tela.value.length <= 12){
@@ -239,13 +239,13 @@ function botao(valoTela){
             Pontovirgula.setAttribute("disabled", "true");
         }
 
-        if(largura < 420 && tela.value.length <= 6){
+        if(largura < 720 && tela.value.length <= 6){
             tamanho = 50;
             tela.style.fontSize = tamanho+"px";
-        } else if(largura < 420 && tela.value.length <= 12){
+        } else if(largura < 720 && tela.value.length <= 12){
             tamanho = 30;
             tela.style.fontSize = tamanho+"px";
-        } else if(largura > 420 && tela.value.length <= 6){
+        } else if(largura > 720 && tela.value.length <= 6){
             tamanho = 92;
             tela.style.fontSize = tamanho+"px";
         } else if(quantidadeNaTela > 6 && tela.value.length <= 12){
@@ -273,13 +273,13 @@ function operacao(operation){
         numerosTotais++;
         var largura = window.innerWidth;
 
-        if(largura < 420 && quantidadeNaTela <= 6){
+        if(largura < 720 && quantidadeNaTela <= 6){
             tamanho = 50;
             tela.style.fontSize = tamanho+"px";
-        } else if(largura < 420 && quantidadeNaTela <= 12){
+        } else if(largura < 720 && quantidadeNaTela <= 12){
             tamanho = 30;
             tela.style.fontSize = tamanho+"px";
-        } else if(largura > 420 && quantidadeNaTela <= 6){
+        } else if(largura > 720 && quantidadeNaTela <= 6){
             tamanho = 92;
             tela.style.fontSize = tamanho+"px";
         } else if(quantidadeNaTela > 6 && quantidadeNaTela <= 12){
