@@ -6,6 +6,7 @@
     border-radius: 20px;;
     cursor: pointer;
     color: black;
+    background-color: var(--botaoDisabled);
 }
 
 #botaoOn {
@@ -24,6 +25,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     color: black;
+    background-color: var(--botaoDisabled);
 }
 
 button:hover {
