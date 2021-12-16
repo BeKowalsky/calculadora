@@ -1,0 +1,6 @@
+header {
+    background-color: var(--corHeaderFooter);
+    padding: 10px;
+    text-align: center;
+    color: white;
+}

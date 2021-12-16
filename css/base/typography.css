@@ -1,0 +1,48 @@
+header {
+    text-align: center;
+}
+
+#recomendacoes > p {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+#tela {
+    text-align: right;
+}
+
+#zeroInicial {
+    font-size: 92px;
+}
+
+.botoesInicio > button {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (max-width: 420px) {
+
+    #tela {
+        font-size: 50px;
+    }
+
+    button {
+        font-size: 25px;
+    }
+
+    .botoesInicio > button {
+        font-size: 15px;
+    }
+}

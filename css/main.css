@@ -1,0 +1,18 @@
+/* main.css */
+
+/* base */
+@import './base/reset.css';
+@import './base/typography.css';
+
+/* layout */
+@import './layout/body.css';
+@import './layout/header.css';
+@import './layout/principal.css';
+@import './layout/footer.css';
+
+/* components */
+@import './components/button.css';
+@import './components/input.css';
+
+/* utils */
+@import './utils/variables.css';

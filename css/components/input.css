@@ -1,0 +1,24 @@
+#tela {
+    width: 485px;
+    height: 100px;
+    background-color: grey;
+    margin: auto;
+    border-radius: 30px;
+    font-family: var(--fonteDeCalculadora);
+    cursor: initial;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+@media screen and (max-width: 420px) {
+    #tela {
+        width: 265px;
+    }
+}

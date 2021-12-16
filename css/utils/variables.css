@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'calculadora';
+    src: url('../../fonte/Calculator.ttf') format('truetype');
+}
+
+:root {
+    --corDoBody: #4e81bb3b;
+    --sombraDaCalculadora: rgba(128, 128, 128, 0.425);
+    --corDaCalculadora: black;
+    --corOff: red;
+    --corOn: green;
+    --corHeaderFooter: #0F3F76;
+    --botaoDeLigar: rgb(250, 112, 135);
+    --botaoDeLigarNoHover: rgb(241, 81, 108);
+    --botoesHover: rgba(207, 207, 207, 0.945);
+    --botaoDisabled: #EFEFEF;
+
+    --fonteDeCalculadora: 'calculadora';
+}

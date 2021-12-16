@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora para operações básicas</h1>
+    </header>
+
+    <main>
+
+        <div id="recomendacoes">
+            <hr>
+            <h2>Como usar a calculadora:</h2>
+
+            <p>➥<strong>IMPORTANTE:</strong> A calculadora aceita SOMENTE 12 dígitos</p>
+            <p>
+                ➔ Para ligar a calculadora, basta apertar em "ON/C", Assim que mudar de OFF para ON a calculadora está pronta para ser usada.
+            </p>
+            <p>
+                ➔ Se deseja salvar um valor para ser usado posteriormente, aperte "M+"".
+            </p>
+            <p>
+                ➔ Se desejar ver o valor armazenado aperte "MRC", caso você aperte "MRC" duas vezes, a calculadora irá apagar o valor armazenado.
+            </p>
+            <p>
+                ➔ Se desejar subtrair o valor atual da calculadora com o valor armazenado, aperte "M-" que a operação irá acontecer. O valor da subtração será armazenado na calculadora, não é preciso apertar "M+" para armazena-lo.
+            </p>
+            <p>
+                ➔ Se quiser usar cálculos com vírgula, é preciso apenas apertar no "●", é importante saber que esse botão serve apenas para colocar vírgula no número, se quiser fazer cálculos com valores em mil, milhão, não deve colocar o ponto.
+            </p>
+            <p>
+                ➔ Se você acabou de realizar um cálculo e quer fazer um novo, só clicar em "CE" que a calculadora apaga os valores.
+            </p>
+            
+            <hr>
+        </div>
+
+        <div class="calculadora">
+
+            <h3>12 DIGITS</h3>
+
+            <div id="Off">
+                <p>OFF</p>
+            </div>
+
+            <div id="On">
+                <p>ON</p>
+            </div>
+
+            <input type="text" id="tela" readonly>
+            <p id="zeroInicial">0</p>
+
+            <div class="botoes">
+
+                <div class="botoesInicio">
+                    <button id="botaoOn" onclick="calculadoraOn()">ON/C</button>
+                    <button id="limpaTela" onclick="limparTela()">CE</button>
+                    <button id="mostrarValorOuApagar" onclick="mostraValorOuApaga()">MRC</button>
+                    <button id="subtrairValor" onclick="subtraiValorGravado()">M-</button>
+                    <button id="salvaValor" onclick="gravaValor()">M+</button>
+                </div>
+
+                <div id="primeira">
+                    <button id="botao7" class="botaoComNumero" onclick="botao(this.value)" value="7">7</button>
+                    <button id="botao8" class="botaoComNumero" onclick="botao(this.value)" value="8">8</button>
+                    <button id="botao9" class="botaoComNumero" onclick="botao(this.value)" value="9">9</button>
+                    <button id="divisao" class="botaoCalculo" onclick="operacao(this.value)" value="/">÷</button>
+                </div>
+
+                <div id="segunda">
+                    <button id="botao4" class="botaoComNumero" onclick="botao(this.value)" value="4">4</button>
+                    <button id="botao5" class="botaoComNumero" onclick="botao(this.value)" value="5">5</button>
+                    <button id="botao6" class="botaoComNumero" onclick="botao(this.value)" value="6">6</button>
+                    <button id="multiplicacao" class="botaoCalculo" onclick="operacao(this.value)" value="*">×</button>
+                </div>
+
+                <div id="terceira">
+                    <button id="botao1" class="botaoComNumero" onclick="botao(this.value)" value="1">1</button>
+                    <button id="botao2" class="botaoComNumero" onclick="botao(this.value)" value="2">2</button>
+                    <button id="botao3" class="botaoComNumero" onclick="botao(this.value)" value="3">3</button>
+                    <button id="subtracao" class="botaoCalculo" onclick="operacao(this.value)" value="-">−</button>
+                </div>
+
+                <div id="quarta">
+                    <button id="botao0" class="botaoComNumero" onclick="botao(this.value)" value="0">0</button>
+                    <button id="virgula" onclick="virgula()" value=".">●</button>
+                    <button id="soma" class="botaoCalculo" onclick="operacao(this.value)" value="+">+</button>
+                    <button id="botaoCalcula" onclick="calcular()">=</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Desenvolvido por Bernardo Magueta Kowalsky ● 2021
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

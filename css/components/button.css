@@ -1,0 +1,48 @@
+.botoesInicio > button {
+    margin-top: 30px;
+    margin-left: 23px;
+    width: 70px;
+    padding: 10px;
+    border-radius: 20px;;
+    cursor: pointer;
+}
+
+#botaoOn {
+    background-color: var(--botaoDeLigar);
+}
+
+#botaoOn:hover {
+    background-color:var(--botaoDeLigarNoHover);
+}
+
+button {
+    margin-top: 40px;
+    margin-left: 30px;
+    width: 85px;
+    padding: 10px;
+    border-radius: 10px;;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--botoesHover);
+}
+
+button[disabled="true"] {
+    background-color: var(--botaoDisabled);
+    color: black;
+}
+
+@media screen and (max-width: 420px) {
+
+    button {
+        width: 40px;
+        margin-left: 19px;
+    }
+
+    .botoesInicio > button {
+        margin-left: 1px;
+        width: 48.5px;
+        padding: 5px;
+}
+}
