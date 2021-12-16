@@ -27,6 +27,8 @@ let divisao = document.getElementById('divisao');
 let multiplicacao =  document.getElementById('multiplicacao');
 let Pontovirgula = document.getElementById('virgula');
 
+let temUmPonto = false;
+
 let calculatorIsOn = false;
 let mostrouValorGravado = 0;
 localStorage.setItem("MostrouQuantasVezes", mostrouValorGravado);
@@ -55,7 +57,8 @@ function calculadoraOn(){
     quantidadeNaTela = 0;
     tamanho = 92;
     tela.style.fontSize = tamanho+"px";
-    numerosTotais = 0
+    numerosTotais = 0;
+    temUmPonto = false;
 
     botao1.removeAttribute("disabled");
     botao2.removeAttribute("disabled");
@@ -86,6 +89,7 @@ function limparTela(){
         tamanho = 92;
         tela.style.fontSize = tamanho+"px";
         numerosTotais = 0;
+        temUmPonto = false;
 
         botao1.removeAttribute("disabled");
         botao2.removeAttribute("disabled");
@@ -111,6 +115,7 @@ function limparTela(){
 //Se a calculadora estiver ligada, quando clicar no M+ ele grava o valor que está na tela
 function gravaValor(){
     if(calculatorIsOn == true){
+        temUmPonto = false;
         let valor = tela.value;
         if(valor == null || valor == undefined || valor == ""){
             console.log('Nenhum valor');
@@ -144,6 +149,7 @@ function gravaValor(){
 //Se a calculadora estiver ligada, quando clicar no M- ele subtrai do que está guardado no M+
 function subtraiValorGravado(){
     if(calculatorIsOn == true && gravado == true){
+        temUmPonto = false;
         let valor = localStorage.getItem("Valor");
         let valorTela = tela.value;
         let total = parseInt(valor) - parseInt(valorTela);
@@ -258,7 +264,10 @@ function botao(valoTela){
 //Adiciona a vírgula caso o usuário queira calculo com virgula
 function virgula(){
     if(calculatorIsOn == true){
-        tela.value += ".";
+        if(temUmPonto == false) {
+            tela.value += ".";
+            temUmPonto = true;
+        }
     }
 }
 
@@ -290,6 +299,8 @@ function operacao(operation){
         if(numerosTotais >= 2){
             botaoCalcula.removeAttribute("disabled");
         }
+        
+        temUmPonto = false;
     }
 }
 
@@ -301,6 +312,7 @@ function calcular(){
         tela.style.fontSize = tamanho+"px";
         tela.value = resultado;
         quantidadeNaTela = 0;
+        temUmPonto = false;
 
         botao1.removeAttribute("disabled");
         botao2.removeAttribute("disabled");
