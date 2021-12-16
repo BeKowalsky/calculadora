@@ -65,7 +65,7 @@ h3 {
 
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 720px) {
     .calculadora {
         width: 265px;
     }
