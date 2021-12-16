@@ -29,6 +29,7 @@ let Pontovirgula = document.getElementById('virgula');
 
 let temUmPonto = false;
 let temValorNaTela = false;
+let temValorPosVirgula = false;
 
 let calculatorIsOn = false;
 let mostrouValorGravado = 0;
@@ -61,6 +62,7 @@ function calculadoraOn(){
     numerosTotais = 0;
     temUmPonto = false;
     temValorNaTela = false;
+    temValorPosVirgula = false;
 
     botao1.removeAttribute("disabled");
     botao2.removeAttribute("disabled");
@@ -93,6 +95,7 @@ function limparTela(){
         numerosTotais = 0;
         temUmPonto = false;
         temValorNaTela = false;
+        temValorPosVirgula = false;
 
         botao1.removeAttribute("disabled");
         botao2.removeAttribute("disabled");
@@ -130,6 +133,7 @@ function gravaValor(){
             numerosTotais = 0;
             temUmPonto = false;
             temValorNaTela = false;
+            temValorPosVirgula = false;
         }
 
         botao1.removeAttribute("disabled");
@@ -163,6 +167,7 @@ function subtraiValorGravado(){
         zeroInicial.style.display = "block";
         numerosTotais = 0;
         temValorNaTela = false;
+        temValorPosVirgula = false;
 
         botao1.removeAttribute("disabled");
         botao2.removeAttribute("disabled");
@@ -235,6 +240,10 @@ function botao(valoTela){
         numerosTotais++;
         temValorNaTela = true;
         
+        if(temUmPonto == true){
+            temValorPosVirgula = true;
+        }
+        
         var largura = window.innerWidth;
         
         if(numerosTotais == 12 || numerosTotais == 23){
@@ -275,10 +284,13 @@ function botao(valoTela){
 //Adiciona a vírgula caso o usuário queira calculo com virgula
 function virgula(){
     if(calculatorIsOn == true){
+        temValorPosVirgula == false;
         if(temUmPonto == false && temValorNaTela == true) {
             tela.value += ".";
             temUmPonto = true;
             zeroInicial.style.display = "none";
+            temValorPosVirgula = false;
+
             var largura = window.innerWidth;
 
             if(largura < 720 && quantidadeNaTela <= 6){
@@ -299,6 +311,7 @@ function virgula(){
             tela.value += "0.";
             temUmPonto = true;
             zeroInicial.style.display = "none";
+
             var largura = window.innerWidth;
 
             if(largura < 720 && quantidadeNaTela <= 6){
@@ -324,7 +337,7 @@ function virgula(){
 var valor;
 var resultado;
 function operacao(operation){
-    if(calculatorIsOn == true){
+    if(calculatorIsOn == true && temValorPosVirgula == true || temUmPonto == true && temValorPosVirgula == true || temUmPonto == false){
         zeroInicial.style.display = "none";
         valor = tela.value += operation;
         quantidadeNaTela++;
@@ -351,6 +364,7 @@ function operacao(operation){
         
         temUmPonto = false;
         temValorNaTela = true;
+        temValorPosVirgula = false;
     }
 }
 
@@ -364,6 +378,7 @@ function calcular(){
         quantidadeNaTela = 0;
         temUmPonto = false;
         temValorNaTela = true;
+        temValorPosVirgula = false;
 
         botao1.removeAttribute("disabled");
         botao2.removeAttribute("disabled");
