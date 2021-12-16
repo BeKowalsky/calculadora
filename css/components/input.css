@@ -17,7 +17,7 @@ input[type=number] {
     appearance: textfield;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 720px) {
     #tela {
         width: 265px;
     }
