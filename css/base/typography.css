@@ -18,7 +18,7 @@ h3 {
     font-size: 92px;
 }
 
-.botoesInicio > button {
+.primeira > button {
     font-size: 20px;
     font-weight: bold;
 }
@@ -42,7 +42,7 @@ footer {
         font-size: 25px;
     }
 
-    .botoesInicio > button {
+    .primeira > button {
         font-size: 15px;
     }
     
