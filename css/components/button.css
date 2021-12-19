@@ -1,4 +1,4 @@
-.botoesInicio > button {
+.primeira > button {
     margin-top: 30px;
     margin-left: 23px;
     width: 70px;
@@ -44,7 +44,7 @@ button[disabled="true"] {
         margin-left: 19px;
     }
 
-    .botoesInicio > button {
+    .primeira > button {
         margin-left: 1px;
         width: 48.5px;
         padding: 5px;
