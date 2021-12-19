@@ -14,7 +14,7 @@
     </header>
 
     <main>
-
+        <!--Parte inicial da página, onde o usuário poderá ler e entender como utilizar a calculadora-->
         <div id="recomendacoes">
             <hr>
             <h2>Como usar a calculadora:</h2>
@@ -41,9 +41,12 @@
             
             <hr>
         </div>
-
+        
+        <!--Começa a calculadora-->
         <div class="calculadora">
-
+            
+            <!--Parte onde indica a quantidade de dígitos e se está ligada ou não-->
+      
             <h3>12 DIGITS</h3>
 
             <div id="Off">
@@ -53,42 +56,49 @@
             <div id="On">
                 <p>ON</p>
             </div>
-
+            
+            <!--Tela da calculadora + Zero que fica até o usuário digitar algo-->
             <input type="text" id="tela" readonly>
             <p id="zeroInicial">0</p>
-
+            
+            <!--Botões da calculadora-->
             <div class="botoes">
-
-                <div class="botoesInicio">
+                
+                <!--Primeira linha dos botões da calculadora, onde o usuário liga, guarda valor e etc-->
+                <div class="primeira">
                     <button id="botaoOn" onclick="calculadoraOn()">ON/C</button>
                     <button id="limpaTela" onclick="limparTela()">CE</button>
                     <button id="mostrarValorOuApagar" onclick="mostraValorOuApaga()">MRC</button>
                     <button id="subtrairValor" onclick="subtraiValorGravado()">M-</button>
                     <button id="salvaValor" onclick="gravaValor()">M+</button>
                 </div>
-
-                <div id="primeira">
+                
+                 <!--Segunda linha dos botões da calculadora, aqui já é com os primeiros números-->
+                <div id="segunda">
                     <button id="botao7" class="botaoComNumero" onclick="botao(this.value)" value="7">7</button>
                     <button id="botao8" class="botaoComNumero" onclick="botao(this.value)" value="8">8</button>
                     <button id="botao9" class="botaoComNumero" onclick="botao(this.value)" value="9">9</button>
                     <button id="divisao" class="botaoCalculo" onclick="operacao(this.value)" value="/">÷</button>
                 </div>
-
-                <div id="segunda">
+                
+                <!--Terceira linha dos botões da calculadora-->
+                <div id="terceira">
                     <button id="botao4" class="botaoComNumero" onclick="botao(this.value)" value="4">4</button>
                     <button id="botao5" class="botaoComNumero" onclick="botao(this.value)" value="5">5</button>
                     <button id="botao6" class="botaoComNumero" onclick="botao(this.value)" value="6">6</button>
                     <button id="multiplicacao" class="botaoCalculo" onclick="operacao(this.value)" value="*">×</button>
                 </div>
-
-                <div id="terceira">
+                
+                <!--Quarta linha dos botões da calculadora-->
+                <div id="quarta">
                     <button id="botao1" class="botaoComNumero" onclick="botao(this.value)" value="1">1</button>
                     <button id="botao2" class="botaoComNumero" onclick="botao(this.value)" value="2">2</button>
                     <button id="botao3" class="botaoComNumero" onclick="botao(this.value)" value="3">3</button>
                     <button id="subtracao" class="botaoCalculo" onclick="operacao(this.value)" value="-">−</button>
                 </div>
-
-                <div id="quarta">
+                
+                <!--Quinta e última linha dos botões da calculadora-->
+                <div id="quinta">
                     <button id="botao0" class="botaoComNumero" onclick="botao(this.value)" value="0">0</button>
                     <button id="virgula" onclick="virgula()" value=".">•</button>
                     <button id="soma" class="botaoCalculo" onclick="operacao(this.value)" value="+">+</button>
@@ -99,11 +109,13 @@
         </div>
 
     </main>
-
+    
+    <!--Footer com o copyright-->
     <footer>
         &copy; Desenvolvido por Bernardo Magueta Kowalsky ● 2021
     </footer>
-
+    
+    <!--Script-->
     <script src="./script.js"></script>
 </body>
 </html>
