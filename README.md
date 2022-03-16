@@ -1,4 +1,4 @@
-# calculadora
+# Calculadora
  - Criei essa calculadora no intuito de treinar minhas habilidades.
 
 ## Linguagens Utilizadas:
